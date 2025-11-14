@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    align-items: center;
+
+    height: 60px;
+    width: 100%;
+    background-color: var(--SECONDARY-COLOR);
+    border-bottom: 1px solid var(--MIDDLE-GREY);
+
+    padding-left: 30px;
+}
+
+.logo {
+    height: 45%;
+}

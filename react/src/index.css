@@ -1,68 +1,109 @@
+/* ------------------------------------------------------------------------------------ */
+/* CSS RESET DECLARATIONS */
+/* ------------------------------------------------------------------------------------ */
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --PRIMARY-COLOR: #143275;
+  --FONT-COLOR: RGB(245,245,245);
+  --SECONDARY-COLOR: RGB(245,245,245);
+  --MIDDLE-GREY: RGB(214,214,214);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* 1. Use the more robust border-box model for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body {
+/* 2. Reset margin and padding on all elements */
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* 3. Set up the body for a better default experience */
+body {
+  line-height: 1.5; /* Improves readability */
+  -webkit-font-smoothing: antialiased; /* Better font rendering on macOS/iOS */
+  font-family: "Shape Sans", Arial, sans-serif;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* 4. Improve handling of media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block; /* Removes baseline spacing issues */
+  max-width: 100%; /* Ensures images scale responsively */
 }
 
-button {
+/* 5. Remove built-in padding on lists and quote elements */
+ul, ol, blockquote {
+    list-style: none; /* Often helpful for custom list styling */
+}
+
+/* 6. Remove text decorations from links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Allow form inputs to be easily styled */
+button, input[type="submit"] {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+/* 9. Prevent text overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+  color: var(--PRIMARY-COLOR);
+}
+
+/* ------------------------------------------------------------------------------------ */
+/* APP.JSX DECLARATIONS */
+/* ------------------------------------------------------------------------------------ */
+
+.primary-button {
+  fill: var(--PRIMARY-COLOR);
+  border: 1px solid var(--PRIMARY-COLOR);
+  color: var(--FONT-COLOR);
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.secondary-button {
+  border: 1px solid var(--PRIMARY-COLOR);
+  margin-right: 20px;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.secondary-button:hover {
+  background-color: var(--PRIMARY-COLOR);
+  color: var(--FONT-COLOR);
 }
